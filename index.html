@@ -1,78 +1,205 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MindClusive</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-font-family: Arial, sans-serif;
+*{
 margin:0;
-background:#f6f8fb;
-color:#333;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
-header{
-background:#2c3e50;
-color:white;
-padding:30px;
-text-align:center;
+body{
+background:#F7F9FC;
+color:#333;
+line-height:1.7;
 }
+
+/* NAVBAR */
 
 nav{
-background:#34495e;
-padding:10px;
-text-align:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 10%;
+background:white;
+box-shadow:0 2px 12px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav img{
+height:50px;
+}
+
+nav ul{
+display:flex;
+gap:28px;
+list-style:none;
 }
 
 nav a{
-color:white;
-margin:0 15px;
 text-decoration:none;
-font-weight:bold;
+font-weight:500;
+color:#333;
 }
 
-section{
-padding:50px;
-max-width:1000px;
-margin:auto;
-}
-
-h1,h2{
-color:#2c3e50;
-}
+/* HERO */
 
 .hero{
-background:#ecf0f1;
-padding:60px;
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+padding:40px;
+background:linear-gradient(135deg,#5F72FF,#9B23EA);
+color:white;
+}
+
+.hero h1{
+font-size:56px;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:720px;
+font-size:20px;
+opacity:0.95;
+}
+
+.hero button{
+margin-top:30px;
+padding:14px 28px;
+border:none;
+border-radius:8px;
+font-size:16px;
+background:white;
+color:#5F72FF;
+cursor:pointer;
+font-weight:600;
+}
+
+/* SECTIONS */
+
+section{
+padding:90px 12%;
+}
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin-bottom:45px;
+color:#333;
+}
+
+/* TEXT BLOCK */
+
+.text-box{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:18px;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
 }
 
 .card{
 background:white;
-padding:25px;
-margin:20px 0;
-border-radius:8px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
+padding:28px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
-footer{
-background:#2c3e50;
+.card:hover{
+transform:translateY(-6px);
+}
+
+/* COMMUNITY LIST */
+
+.community{
+max-width:800px;
+margin:auto;
+text-align:center;
+}
+
+.community ul{
+columns:2;
+margin-top:20px;
+list-style:none;
+}
+
+.community li{
+margin:8px 0;
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#5F72FF,#9B23EA);
 color:white;
 text-align:center;
-padding:20px;
-margin-top:40px;
+padding:80px 20px;
 }
 
-button{
-background:#3498db;
+.cta button{
+margin-top:25px;
+padding:14px 28px;
 border:none;
-color:white;
-padding:12px 20px;
-border-radius:6px;
-font-size:16px;
+border-radius:8px;
+background:white;
+color:#5F72FF;
+font-weight:600;
 cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+.community ul{
+columns:1;
+}
+
+nav ul{
+display:none;
+}
+
 }
 
 </style>
@@ -81,103 +208,147 @@ cursor:pointer;
 
 <body>
 
-<header>
-<h1>MindClusive</h1>
-<p>Building a more inclusive society</p>
-</header>
+<!-- NAVBAR -->
 
 <nav>
-<a href="#about">About</a>
-<a href="#vision">Vision</a>
-<a href="#mission">Mission</a>
-<a href="#focus">Focus Areas</a>
-<a href="#contact">Contact</a>
+
+<img src="logo.png">
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#mission">Mission</a></li>
+<li><a href="#focus">Focus</a></li>
+<li><a href="#community">Community</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
 </nav>
 
+<!-- HERO -->
+
 <div class="hero">
-<h2>Inclusion Beyond Accessibility</h2>
-<p>Creating a world where everyone truly belongs.</p>
+
+<h1>MindClusive</h1>
+
+<p>
+Building a world where everyone truly belongs.  
+Promoting inclusion, mental health awareness, and support for neurodiverse and disabled communities.
+</p>
+
+<a href="#about">
+<button>Learn More</button>
+</a>
+
 </div>
+
+<!-- ABOUT -->
 
 <section id="about">
 
-<h2>Overview</h2>
+<h2 class="section-title">About MindClusive</h2>
 
-<div class="card">
-<p>
-MindClusive is a social initiative dedicated to promoting genuine inclusion in society.
-While people often say we are more connected than ever, many communities still remain excluded from mainstream participation.
-
-MindClusive believes inclusion goes beyond infrastructure or policies — it means creating a society where everyone feels valued and has a true sense of belonging.
-</p>
-</div>
-
-</section>
-
-<section id="vision">
-
-<h2>Vision</h2>
-
-<div class="card">
+<div class="text-box">
 
 <p>
-We live in an era where many proudly claim that everyone is connected more than ever before. But have we truly included everyone?
 
-Providing accessible infrastructure alone is not enough for individuals who have historically been labelled as "atypical".
+We live in an era where people proudly claim that everyone is more connected than ever before. But have we truly included everyone?
 
-Humans are social beings who seek belonging. Our vision is to create a society where inclusiveness is a fundamental value and everyone has the opportunity to participate fully in community life.
+MindClusive believes that inclusion goes beyond infrastructure and accessibility. True inclusion means creating communities where every individual feels valued, respected, and empowered to participate fully.
+
+Our initiative promotes awareness around mental health, neurodiversity, disability inclusion, and social belonging.
+
 </p>
 
 </div>
 
 </section>
+
+<!-- MISSION -->
 
 <section id="mission">
 
-<h2>Mission</h2>
+<h2 class="section-title">Vision & Mission</h2>
 
-<div class="card">
+<div class="text-box">
 
 <p>
-The idea of inclusion can vary depending on context, but many forms of exclusion remain normalised in society — including ignorance, stereotypes, prejudice, stigma and lack of awareness.
 
-Many communities continue to be excluded from mainstream society, including LGBTQ+ communities, neurodivergent individuals, and people with disabilities.
+Our vision is a society where every individual—regardless of ability, identity, or neurological differences—feels respected, valued, and included.
 
-MindClusive aims to promote inclusiveness in its truest sense — from homes to educational institutions and workplaces.
+MindClusive works to challenge stereotypes, reduce stigma, and create conversations around inclusion in homes, schools, workplaces, and communities.
+
 </p>
 
 </div>
 
 </section>
 
+<!-- FOCUS -->
+
 <section id="focus">
 
-<h2>Focus Areas</h2>
+<h2 class="section-title">Focus Areas</h2>
+
+<div class="cards">
 
 <div class="card">
+<h3>Mental Health Awareness</h3>
+<p>Encouraging open conversations and reducing stigma around mental health.</p>
+</div>
+
+<div class="card">
+<h3>Neurodiversity</h3>
+<p>Advocating acceptance of autism, ADHD and other neurological differences.</p>
+</div>
+
+<div class="card">
+<h3>Disability Inclusion</h3>
+<p>Supporting accessibility, participation and empowerment.</p>
+</div>
+
+<div class="card">
+<h3>Community Awareness</h3>
+<p>Promoting empathy and inclusive thinking within society.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- COMMUNITY -->
+
+<section id="community">
+
+<h2 class="section-title">Communities We Support</h2>
+
+<div class="community">
 
 <ul>
-<li>Mental Health Awareness</li>
-<li>Neurodiversity Advocacy</li>
-<li>Disability Inclusion</li>
-<li>Community Awareness</li>
-<li>Special Needs Support</li>
-<li>Accessibility & Inclusion Education</li>
+
+<li>Autism Community</li>
+<li>ADHD Community</li>
+<li>Down Syndrome</li>
+<li>Learning Disabilities</li>
+<li>Intellectual Disabilities</li>
+<li>Visual Impairment</li>
+<li>Hearing Impairment</li>
+<li>Locomotor Disability</li>
+<li>LGBTQ+ Communities</li>
+<li>Parents of Children with Special Needs</li>
+
 </ul>
 
 </div>
 
 </section>
 
-<section id="contact">
+<!-- CONTACT -->
 
-<h2>Connect With Us</h2>
+<div class="cta" id="contact">
 
-<div class="card">
+<h2>Connect With MindClusive</h2>
 
-<p>
-Follow MindClusive on Instagram to stay updated on initiatives and discussions.
-</p>
+<p>Follow us to stay updated with initiatives and conversations.</p>
 
 <a href="https://www.instagram.com/mindclusive/" target="_blank">
 <button>Visit Instagram</button>
@@ -185,14 +356,13 @@ Follow MindClusive on Instagram to stay updated on initiatives and discussions.
 
 </div>
 
-</section>
-
 <footer>
 
-<p>© 2026 MindClusive</p>
+© 2026 MindClusive
 
 </footer>
 
 </body>
 
 </html>
+```
